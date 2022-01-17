@@ -1,0 +1,44 @@
+name: MyProject
+configs:
+    Debug: debug
+    Release: release
+options:
+    createIntermediateGroups: true
+    groupSortPosition: top
+    generateEmptyDirectories: true
+    indentWidth: 4
+    tabWidth: 4
+    bundleIdPrefix: "com.anhlh"
+settings:
+    PRODUCT_BUNDLE_IDENTIFIER: $(PRODUCT_BUNDLE_IDENTIFIER)
+targets:
+  MyApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources: [MyProject]
+    configFiles:
+        Debug: MyProject/Shared/Configs/Debug.xcconfig
+        Release: MyProject/Shared/Configs/Release.xcconfig
+    settings:
+        INFOPLIST_FILE: MyProject/Resources/Info.plist
+        SWIFT_VERSION: "5.0"
+        SWIFT_OBJC_BRIDGING_HEADER: MyProject/Resources/Header.h
+        UILaunchStoryboardName: LaunchScreen
+        VALIDATE_WORKSPACE: YES
+      
+schemes:
+  MyApp:
+    build:
+      targets:
+        MyApp: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+    profile:
+      config: Debug
+    analyze:
+      config: Debug
+    archive:
+      config: Release

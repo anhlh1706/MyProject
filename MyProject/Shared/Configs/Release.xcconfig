@@ -1,0 +1,14 @@
+//
+//  Release.xcconfig
+//  Base
+//
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "./Pods/Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"
+
+APP_NAME = MyApp
+PRODUCT_BUNDLE_IDENTIFIER = anhlh.base
+SLASH = /
+SCHEME = https:${SLASH}${SLASH}
+APP_VERSION = 1
+APP_VERSION_BUILD = 1
+OTHER_SWIFT_FLAGS = -D RELEASE
